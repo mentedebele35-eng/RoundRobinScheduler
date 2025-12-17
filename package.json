@@ -1,0 +1,14 @@
+{
+    "name": "round-robin-scheduler",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "cd frontend && npm install && npm run build",
+        "vercel-build": "cd frontend && npm install && npm run build"
+    },
+    "devDependencies": {
+        "vite": "^6.0.0"
+    },
+    "engines": {
+        "node": "18.x"
+    }
+}
