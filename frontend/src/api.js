@@ -10,7 +10,16 @@ export const simulateRoundRobin = async (processes, quantum) => {
     });
     return response.data;
   } catch (error) {
-    console.error('API Error:', error);
+    console.error('API Error:', {
+      message: error.message,
+      response: error.response?.data,
+      status: error.status,
+      config: error.config
+    });
+    // Rethrow a more descriptive error if the server provided one
+    if (error.response && error.response.data && error.response.data.error) {
+      throw new Error(error.response.data.error);
+    }
     throw error;
   }
 };

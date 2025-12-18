@@ -17,7 +17,7 @@ function App() {
       const result = await simulateRoundRobin(processes, quantum);
       setData(result);
     } catch (err) {
-      setError('Failed to fetch results. Ensure backend is running.');
+      setError(err.message || 'Failed to fetch results. Ensure backend is running.');
     } finally {
       setLoading(false);
     }
